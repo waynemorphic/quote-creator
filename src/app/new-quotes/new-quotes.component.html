@@ -3,6 +3,10 @@
     <li
       *ngFor='let qt of qts'>
       {{ qt.quote }}, {{ qt.name }}
+      <app-quotes-details [qts]="qt"></app-quotes-details>
     </li>
   </ol>
 </div>
+
+<!-- qts is the property from the parent new quotes component while 
+qt is the variable from class Quotes -->
