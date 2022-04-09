@@ -1,7 +1,7 @@
 export class Quotes {
     quote: string;
     name: string;
-  
+    description: string;  
 
 }
 

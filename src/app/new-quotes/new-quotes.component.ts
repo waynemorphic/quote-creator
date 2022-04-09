@@ -9,8 +9,8 @@ import { Quotes } from '../quotes';
 export class NewQuotesComponent implements OnInit {
 
   qts:Quotes[] = [
-    {quote: 'It always seems impossible until it is done', name: 'Nelson Mandela' },
-    {quote: 'Be inspired before you expire', name:'Pepe Minambo'}
+    {quote: 'It always seems impossible until it is done', name: 'Nelson Mandela', description: 'Posted by Wayne' },
+    {quote: 'Be inspired before you expire', name:'Pepe Minambo', description: 'Posted by Wayne'}
   ];
 
 
