@@ -1,12 +1,25 @@
-<div>
-<ol>
-    <li
+<div class="container">
+<ul>
+  <div>
+    <div *ngFor="let qt of qts; let i = index">
+      <li>{{ qt.quote }} <br> ~ {{ qt.name }} </li>
+      <button (click)="toggleQuoteDescription(i)" class="btn btn-primary">Quote Description</button>
+      <app-quotes-details *ngIf="qt.showDescription" [qts]="qt"> </app-quotes-details>
+    </div>
+  </div>
+    <!-- <li
       *ngFor='let qt of qts'>
       {{ qt.quote }}, {{ qt.name }}
       <app-quotes-details [qts]="qt"></app-quotes-details>
-    </li>
-  </ol>
+    </li> -->
+  </ul>
 </div>
 
 <!-- qts is the property from the parent new quotes component while 
 qt is the variable from class Quotes -->
+
+<!--loop logic is index where i is declared as index to register
+each quote item in the quotes list-->
+
+<!-- toggleQuoteDescription is a function for performing a click event 
+binding. ngIf directive displays quote description if it exists -->

@@ -8,15 +8,22 @@ import { Quotes } from '../quotes';
 })
 export class NewQuotesComponent implements OnInit {
 
-  qts:Quotes[] = [
-    {quote: 'It always seems impossible until it is done', name: 'Nelson Mandela', description: 'Posted by Wayne' },
-    {quote: 'Be inspired before you expire', name:'Pepe Minambo', description: 'Posted by Wayne'}
-  ];
+  
 
+  qts:Quotes[] = [
+    new Quotes('It always seems impossible until it is done', 'Nelson Mandela', 'Posted by Wayne'),
+    new Quotes('Be inspired before you expire', 'Pepe Minambo', 'Posted by Wayne'),
+  ];
+  toggleQuoteDescription(index:any){
+      this.qts[index].showDescription = !this.qts[index].showDescription;
+    }
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-
 }
+
+// qts is a property which is an array of type Quotes blueprint class
+
+//new is a keyword for calling class Quotes and defining each quote
