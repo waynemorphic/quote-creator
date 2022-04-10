@@ -1,1 +1,9 @@
 <p>{{ qts.description }}</p>
+<p>This quote was posted {{ qts.completeDate | dateCount }} days ago</p>
+<button (click)='quoteDone(true)' class="btn btn-secondary">Delete</button>
+
+<!-- added a button for emitting an event on clicking a button 
+
+quoteDone is a function for click event binding
+
+we then create the logic of the function in quotes-details comp-ts-->
