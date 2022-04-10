@@ -1,19 +1,21 @@
-<div class="container">
-<ul>
-  <div>
-    <div *ngFor="let qt of qts; let i = index">
-      <li>{{ qt.quote }} <br> ~ {{ qt.name }} </li>
-      <button (click)="toggleQuoteDescription(i)" class="btn btn-primary">Quote Description</button>
-      <app-quotes-details *ngIf="qt.showDescription" [qts]="qt"> </app-quotes-details>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h3>New Quotes</h3>
+      <ul>
+        <div>
+          <div class="w3-panel w3-lefttbar w3-yellow w3-xxlarge w3-serif" *ngFor="let qt of qts; let i = index">
+            <p>{{ qt.quote }} <br> ~ {{ qt.name }} </p>
+            <button (click)="toggleQuoteDescription(i)" class="btn btn-primary">Quote Description</button>
+            <app-quotes-details *ngIf="qt.showDescription" [qts]="qt" (isDone)="quoteDone($event,i)"> </app-quotes-details>
+          </div>
+        </div>
+      </ul>
+    </div>
+    <div class="col">
+      <app-quotes-form></app-quotes-form>
     </div>
   </div>
-    <!-- <li
-      *ngFor='let qt of qts'>
-      {{ qt.quote }}, {{ qt.name }}
-      <app-quotes-details [qts]="qt"></app-quotes-details>
-    </li> -->
-  </ul>
-</div>
 
 <!-- qts is the property from the parent new quotes component while 
 qt is the variable from class Quotes -->
@@ -23,3 +25,7 @@ each quote item in the quotes list-->
 
 <!-- toggleQuoteDescription is a function for performing a click event 
 binding. ngIf directive displays quote description if it exists -->
+
+<!-- isDone is an event emitter. it is caught using parenthesis in the parent component
+and on emition, it calls the quoteDone function. Parameters inside the function 
+are teh expected emitted values and goal items as indexes. -->
