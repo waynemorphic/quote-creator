@@ -4,6 +4,7 @@ export class Quotes {
         public quote: string,
         public name: string,
         public description: string,
+        public completeDate: Date,
     ){
         this.showDescription=false;
     }
