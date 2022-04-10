@@ -2,3 +2,8 @@ h3, label {
     color: white;
     
 }
+
+button {
+    float: right;
+    margin-top: 2%;
+}
