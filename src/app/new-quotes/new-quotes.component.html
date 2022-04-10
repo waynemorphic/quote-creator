@@ -5,7 +5,7 @@
       <ul>
         <div>
           <div class="w3-panel w3-lefttbar w3-yellow w3-xxlarge w3-serif" *ngFor="let qt of qts; let i = index">
-            <p>{{ qt.quote }} <br> ~ {{ qt.name }} </p>
+            <p>{{ qt.quote }} <br> ~ {{ qt.name }}  </p>
             <button (click)="toggleQuoteDescription(i)" class="btn btn-primary">Quote Description</button>
             <app-quotes-details *ngIf="qt.showDescription" [qts]="qt" (isDone)="quoteDone($event,i)"> </app-quotes-details>
           </div>
@@ -13,7 +13,7 @@
       </ul>
     </div>
     <div class="col">
-      <app-quotes-form></app-quotes-form>
+      <app-quotes-form (addQuote)="addNewQuote ($event)"></app-quotes-form>
     </div>
   </div>
 
@@ -29,3 +29,6 @@ binding. ngIf directive displays quote description if it exists -->
 <!-- isDone is an event emitter. it is caught using parenthesis in the parent component
 and on emition, it calls the quoteDone function. Parameters inside the function 
 are teh expected emitted values and goal items as indexes. -->
+
+<!-- app-quotes-form is the from component selector that allows nesting 
+of the form in the new-quotes component.html -->

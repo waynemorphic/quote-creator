@@ -1,26 +1,33 @@
 <div class="container-fluid">
     <h3 class="text-center">Post Quote</h3>
     <hr>
-    <form>
+    <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
         <div class="form-group">
-            <label for="post author">Your Name</label>
-            <input type="text" required class="form-control" id="name">
-  
-        </div>
-        <div class="form-group">
-  
             <label for="quote">Quote</label>
-            <textarea class="form-control" id="quote" rows="4" required></textarea>
-  
+            <textarea class="form-control" id="quote" rows="4"[(ngModel)]="newQuote.quote" name="quote" #quote="ngModel"  required></textarea>
+            <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+                <p>Quote is required</p>
+            </div>
         </div>
         <div class="form-group">
             <label for="quote author">Quote Author/Origin</label>
-            <input type="text" required class="form-control" id="quote author">
+            <input type="text" [(ngModel)]="newQuote.name" name="name" #name='ngModel'required class="form-control" id="quote author">
         </div>
         <div class="form-group">
-            <label for="complete">Completion</label>
-            <input type='date' id="complete" required>
-  
+            <label for="post author">Your Name</label>
+            <input type="text" [(ngModel)]="newQuote.description" name="description" #description='ngModel'required class="form-control" id="name">
+        </div>  
+        <div class="form-group">
+            <label for="current date" style="margin-right: 1%; margin-top: 1%;">Current Date</label>
+            <input type='date' id="current date" [(ngModel)]="newQuote.completeDate" name="completeDate" #currentDate="ngModel" required>
         </div>
+        <button type="submit" class="btn btn-primary">Post Quote</button>
     </form>
   </div>
+
+  <!-- #quoteForm is a template reference variable. it is equated to ngForm
+
+  ngModel is an attribute that is equated to the name attribute of the 
+  newQuote object in component definition class
+
+  name in ngModel are a requirement -->

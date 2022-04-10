@@ -1,5 +1,5 @@
-<p>{{ qts.description }}</p>
-<p>This quote was posted {{ qts.completeDate | dateCount }} days ago</p>
+<!-- <p>{{ qts.description }}</p> -->
+<p>This quote was posted {{ qts.completeDate | dateCount }} days ago by {{ qts.description }}</p>
 <button (click)='quoteDone(true)' class="btn btn-secondary">Delete</button>
 
 <!-- added a button for emitting an event on clicking a button 
