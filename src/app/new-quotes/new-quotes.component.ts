@@ -25,8 +25,8 @@ export class NewQuotesComponent implements OnInit {
   };
 
   addNewQuote(nQ: any) {
-    let qtsArraySize = this.qts.length;
-    nQ.id = qtsArraySize+1;
+    let qtsLength = this.qts.length;
+    nQ.id = qtsLength+1;
     nQ.completeDate = new Date(nQ.completeDate)
     this.qts.push(nQ)
 
