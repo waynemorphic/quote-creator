@@ -8,7 +8,7 @@ import { Quotes } from '../quotes';
 })
 export class QuotesFormComponent implements OnInit {
 
-  newQuote = new Quotes ("", "", "", new Date ()); //here we are creating a new Quote as defined in the blueprint class
+  newQuote = new Quotes ("", "", "", new Date (), 0, 0); //here we are creating a new Quote as defined in the blueprint class
   @Output() addQuote = new EventEmitter<Quotes>();
 
   submitQuote (){

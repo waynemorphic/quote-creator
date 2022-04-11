@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Quotes } from '../quotes';
 
 @Component({
@@ -6,13 +6,13 @@ import { Quotes } from '../quotes';
   templateUrl: './new-quotes.component.html',
   styleUrls: ['./new-quotes.component.css']
 })
+
+
 export class NewQuotesComponent implements OnInit {
-
   
-
   qts:Quotes[] = [
-    new Quotes('It always seems impossible until it is done', 'Nelson Mandela', 'Posted by Wayne', new Date(2022, 4, 7)),
-    new Quotes('Be inspired before you expire', 'Pepe Minambo', 'Posted by Wayne', new Date (2022, 4, 1)),
+    new Quotes('It always seems impossible until it is done', 'Nelson Mandela', ' Wayne', new Date(2021, 12, 7),0,0),
+    new Quotes('Be inspired before you expire', 'Pepe Minambo', 'Winnie', new Date (2022, 3, 2),0,0)
   ];
   toggleQuoteDescription(index:any){
       this.qts[index].showDescription = !this.qts[index].showDescription;
@@ -33,8 +33,13 @@ export class NewQuotesComponent implements OnInit {
     
     console.log(nQ.description)
     // console.log(nQ.name)
-    
-    
+     
+  }
+
+  get sortQuotes() {
+    return this.qts.sort((x , y) => {
+      return <any>new Date(y.completeDate) - <any>new Date(x.completeDate);
+    });
   }
     
   constructor() { }

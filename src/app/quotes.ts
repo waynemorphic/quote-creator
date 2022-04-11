@@ -5,6 +5,8 @@ export class Quotes {
         public name: string,
         public description: string,
         public completeDate: Date,
+        public likes: number,
+        public dislikes: number,
     ){
         this.showDescription=false;
     }
