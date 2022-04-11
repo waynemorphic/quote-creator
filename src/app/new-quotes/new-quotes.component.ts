@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { Quotes } from '../quotes';
 
 @Component({
@@ -23,6 +23,7 @@ export class NewQuotesComponent implements OnInit {
       this.qts.splice(index,1)
     };
   };
+
 
   addNewQuote(nQ: any) {
     let qtsLength = this.qts.length;

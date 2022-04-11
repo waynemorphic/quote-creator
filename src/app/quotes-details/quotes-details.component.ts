@@ -15,6 +15,14 @@ export class QuotesDetailsComponent implements OnInit {
     this.isDone.emit(done)
   };
 
+  upVote(){
+    this.qts.likes+=1;
+  }
+
+  downVote(){
+    this.qts.dislikes+=1;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,6 +1,19 @@
 <!-- <p>{{ qts.description }}</p> -->
 <p>This quote was posted {{ qts.completeDate | dateCount }} days ago by {{ qts.description }}</p>
-
+<div class="row">
+    <div class="col">
+      <button class='btn btn-success' (click)="upVote()"> {{ qts.likes }} 
+        <i class="fa-solid fa-hand-point-up"></i>
+        UpVote 
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-secondary" (click)="downVote()"> {{ qts.dislikes }}
+        <i class="fa-solid fa-hand-point-down"></i>
+        DownVote
+      </button>
+    </div>
+  </div>
 <button (click)='quoteDone(true)' class="btn btn-danger">Delete</button>
 
 <!-- added a button for emitting an event on clicking a button 

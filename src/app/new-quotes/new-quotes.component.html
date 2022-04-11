@@ -7,9 +7,7 @@
           <div class="w3-panel w3-lefttbar w3-yellow w3-xlarge w3-serif" *ngFor="let qt of qts; let i = index">
             <p>{{ qt.quote }} <br> ~ {{ qt.name }}</p>
             <!--upvote and downvote buttons will appear here -->
-            
-            <app-votes></app-votes> 
-            
+                 
             <button (click)="toggleQuoteDescription(i)" class="btn btn-primary">Quote Description</button>
             <app-quotes-details *ngIf="qt.showDescription" [qts]="qt" (isDone)="quoteDone($event,i)"> </app-quotes-details>
           </div>
@@ -19,6 +17,9 @@
     <div class="col">
       <app-quotes-form (addQuote)="addNewQuote ($event)"></app-quotes-form>
     </div>
+  </div>
+  <div class="container">
+    <h3>Developed by Wayne</h3>
   </div>
 
 <!-- qts is the property from the parent new quotes component while 
